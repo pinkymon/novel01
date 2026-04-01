@@ -78,6 +78,23 @@
 - 每個 session 的骨架已標注對應的 reference 文件路徑
 - 讀取 reference → 研究技術概念 → 映射為故事元素 → 生成內容
 
+## 風格對齊工作流程
+
+每次 Actor 模式接龍後，依序執行以下步驟：
+
+1. **更新 `peter-voice.md`**：將使用者本次的 Actor 原話全文收錄（僅收錄使用者原文，不收錄 Claude 生成內容）
+2. **檢查 `style-guide.md`**：確認風格分析是否仍準確，如有新語感特徵則更新
+3. **對齊 Claude 續寫段落**：根據 style-guide.md 校準 Claude 寫的部分，確保：
+   - 第一人稱「我」（除非場景需要切換視角並標註）
+   - 口語、自嘲、短句、逗號串接
+   - 不超過 Peter 敘述量的 1.5 倍描寫密度
+   - 技術類比自然嵌入，不做教學式解釋
+   - 符號習慣與 Peter 一致（`~`、`...`、`!`、`?` 的用法）
+
+**關鍵檔案**：
+- `peter-voice.md`：原話蒐集庫（每 session 後必須更新）
+- `style-guide.md`：風格分析與校準規則
+
 ## 檔案慣例
 - sessions: `sessions/series{N}/session_XXX.md`
 - drafts: `chapter_XX.md`
