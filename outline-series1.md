@@ -24,7 +24,7 @@
 
 | # | 標題 | 技術主題 | RPG 映射 | 引言 | 角色發展 |
 |---|------|----------|----------|------|----------|
-| 01 | The Agent Loop | 核心循環 | Peter 領免許，遇到石頭般的 Claude | "One loop & Bash is all you need" | Peter 進入 The Loop；Claude 待喚醒 |
+| 01 | What Is an Agent? | 核心循環 | Peter 掉入地下城，遇到史萊姆（簡單反射）→ 發現休眠的 Claude → 語言觸發第一道閃光 | "One loop & Bash is all you need" | Peter 發現語言能觸發未知存在；Claude 收到第一個輸入但尚未回應 |
 | 02 | Tool Use | 多工具派遣 | 木棍分化為多種工具 | "Adding a tool means adding one handler" | 裝備升級，能力擴展 |
 | 03 | TodoWrite | 任務追蹤/規劃 | 學會使用冒險者筆記本 | "An agent without a plan drifts" | 從莽撞到有計劃 |
 | 04 | Subagents | 子代理/上下文隔離 | 召喚分身術 | "Break big tasks down; each subtask gets a clean context" | 學會委派，不再事必躬親 |
@@ -47,7 +47,7 @@
 
 | # | 新物件 | 新世界觀 | 新名詞 |
 |---|--------|----------|--------|
-| 01 | 木棍、免許 | The Loop、Harness | Agent, Bash, System Prompt |
+| 01 | 木棍、免許 | The Loop、Loop 光譜（反射→語言→???） | Agent, 語言觸發, 白色選單框 |
 | 02 | 工具腰帶？ | 工具派遣系統 | Dispatch Map, Sandboxing |
 | 03 | 冒險者筆記本 | 計劃的力量 | TodoManager, Nag Reminder |
 | 04 | 分身卷軸？ | 上下文隔離 | Subagent, Fresh Context |
