@@ -5,33 +5,47 @@
 1. **使用者主導** — 故事方向、劇情走向由使用者決定
 2. **開放性設計** — 隨時加入新元素（世界觀、物件、名詞）
 3. **Claude 負責研究與生成** — 世界觀/物件/名詞需查資料後產出
-4. **模式切換** — 預設為對話/接龍模式，收到指令時改寫成小說體
+4. **模式切換** — 導演 / 演員 / 改寫 / 系統 四種模式
 5. **每日產出** — 每天生成 brief（進度摘要）和 log（詳細記錄）
 
 ## 目錄結構
 
 ```
 novel/
-├── sessions/        # 接龍紀錄
-├── drafts/          # 改寫草稿（小說體）
-├── worldbuilding/   # 世界觀設定
-├── items/           # 物件設定
-├── glossary/        # 名詞解釋
-├── logs/            # 每日 brief & log
-├── outline.md       # 故事大綱
-├── characters.md    # 角色設定
-└── README.md        # 本說明
+├── sessions/
+│   └── series1/         # Series 1: The Loop Awakens（12 sessions）
+│       ├── session_001.md
+│       ├── ...
+│       └── session_012.md
+├── drafts/              # 改寫草稿（小說體）
+├── worldbuilding/       # 世界觀設定
+├── items/               # 物件設定
+├── glossary/            # 名詞解釋
+├── reference/           # 參考資料（.gitignore，不進 repo）
+├── logs/                # 每日 brief & log
+├── outline.md           # 總體大綱
+├── outline-series1.md   # Series 1 大綱（12 session 對照表）
+├── characters.md        # 角色設定
+├── CLAUDE.md            # 協作工作指引
+└── README.md            # 本說明
 ```
+
+## Series 概念
+
+故事以 **Series** 為單位組織，每個 Series 包含多個 Session。
+
+### Series 1: The Loop Awakens
+- 12 個 sessions，每個對應一個技術概念
+- 技術概念映射為 DQ 風格 RPG 故事元素
+- 參考資料：`reference/series1idea/s01~s12`
+- 大綱：`outline-series1.md`
 
 ## 工作流程
 
-### 對話/接龍模式（預設）
-- 使用者給方向或起頭，Claude 續接
-- 每次接龍存至 `sessions/session_XXX.md`
-
-### 改寫模式（指令觸發）
-- 使用者下指令後，將接龍素材改寫成正式小說
-- 存至 `drafts/chapter_XX.md`
+### 🎬 導演模式 — 提供素材，Claude 生成設定
+### 🎭 演員模式 — Claude 下場接龍或對手戲
+### ✍️ 改寫模式 — 素材改寫成正式小說
+### ⚙️ 系統模式 — 處理專案設定、規則、目錄
 
 ### 素材生成
 - 世界觀 → `worldbuilding/主題名.md`
@@ -42,10 +56,3 @@ novel/
 ### 每日記錄
 - `logs/YYYY-MM-DD_brief.md` — 當日進度摘要
 - `logs/YYYY-MM-DD_log.md` — 詳細記錄
-
-## 待補充設定
-
-- [ ] 小說類型
-- [ ] 故事背景與世界觀
-- [ ] 主角設定
-- [ ] 預計長度

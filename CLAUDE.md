@@ -46,7 +46,18 @@
 - brief：`logs/YYYY-MM-DD_brief.md`（3-5 行摘要）
 - log：`logs/YYYY-MM-DD_log.md`（詳細記錄所有變更與決定）
 
+## Series 結構
+- 故事以 Series 為單位，每個 Series 包含多個 Session
+- Session 檔案位於 `sessions/series{N}/session_XXX.md`
+- 每個 Series 有獨立大綱：`outline-series{N}.md`
+
+## Reference 使用規則
+- 參考資料位於 `reference/`（不進 repo）
+- 導演模式時，參考對應的 reference 文件生成 RPG 故事元素
+- 每個 session 的骨架已標注對應的 reference 文件路徑
+- 讀取 reference → 研究技術概念 → 映射為故事元素 → 生成內容
+
 ## 檔案慣例
-- sessions: `session_XXX.md`
+- sessions: `sessions/series{N}/session_XXX.md`
 - drafts: `chapter_XX.md`
 - 所有檔案使用繁體中文
