@@ -20,7 +20,8 @@ novel/
 ├── drafts/              # 改寫草稿（小說體）
 ├── worldbuilding/       # 世界觀設定
 ├── items/               # 物件設定
-├── glossary/            # 名詞解釋
+├── glossary/            # 名詞解釋（故事內）
+├── terminology/         # 技術名詞教學（用 RPG 類比解釋真實技術）
 ├── reference/           # 參考資料（.gitignore，不進 repo）
 ├── logs/                # 每日 brief & log
 ├── outline.md           # 總體大綱
@@ -35,6 +36,7 @@ novel/
 故事以 **Series** 為單位組織，每個 Series 包含多個 Session。
 
 ### Series 1: The Loop Awakens
+- **風格：Dragon Quest 日系 RPG**
 - 12 個 sessions，每個對應一個技術概念
 - 技術概念映射為 DQ 風格 RPG 故事元素
 - 參考資料：`reference/series1idea/s01~s12`
@@ -51,7 +53,12 @@ novel/
 - 世界觀 → `worldbuilding/主題名.md`
 - 物件 → `items/物件名.md`
 - 名詞 → `glossary/名詞.md`
+- 技術教學 → `terminology/term-name.md`（用 RPG 類比教學真實技術）
 - Claude 會查資料確保合理性
+
+### Session 結束規則
+- 導演可根據故事節奏建議結束，或使用者直接下令
+- 結束時：儲存記錄、更新大綱、commit & push
 
 ### 每日記錄
 - `logs/YYYY-MM-DD_brief.md` — 當日進度摘要

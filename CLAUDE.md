@@ -1,23 +1,27 @@
 # Novel Project — Claude 工作指引
 
-## 角色
+## 全域規則（Global）
+- **風格**：Series 1 全程採用 Dragon Quest 日系 RPG 風格
 - 使用者主導故事方向，Claude 是協作者
 - 不要擅自決定劇情走向或搶先開篇
 - 等使用者給方向後再續寫
+- **系統模式的更動為 global**——影響整個專案，不限於單一 session
 
 ## 模式
 
 ### 🎬 導演模式（Director）
 - 使用者提供素材、資料、概念
 - Claude 根據素材生成：物件設定、角色設定、故事大綱、世界觀擴充
-- 產出存至對應目錄（worldbuilding/, items/, glossary/, characters.md）
+- 產出存至對應目錄（worldbuilding/, items/, glossary/, terminology/, characters.md）
 - 需要時查資料（WebSearch）確保合理性與深度
+- **Session 結束時機**：由導演（Claude）根據故事節奏判斷並建議，或由使用者直接下令結束
 
 ### 🎭 演員模式（Actor）
 - Claude 下場參與故事
 - 接龍：輪流續寫段落，保持對話感
 - 對手戲：Claude 扮演特定角色，與使用者的角色互動對話
 - 保持角色一致性，不跳出角色
+- Dragon Quest 風格：對話框感、回合感、冒險感
 
 ### ✍️ 改寫模式（Rewrite）
 - 指令觸發，不會自動進入
@@ -27,6 +31,7 @@
 ### ⚙️ 系統模式（System）
 - 觸發：`<system` 或直接說明「討論系統更新」
 - 暫時跳出故事，處理專案本身的更新事宜
+- **所有系統模式的更動為 global（全域）**，影響整個專案設定
 - 適用範圍：
   - 新增/修改角色、物件、世界觀設定
   - 調整協作規則或模式定義
@@ -39,7 +44,14 @@
 ## 素材生成
 - 世界觀、物件、名詞解釋需要查資料（WebSearch）確保合理性
 - 生成後存至對應目錄：`worldbuilding/`、`items/`、`glossary/`
+- **技術教學**存至 `terminology/`——用 RPG 類比解釋真實技術概念
 - 每份素材用 markdown，包含名稱、描述、在故事中的作用
+
+## Terminology（技術名詞教學）
+- 路徑：`terminology/term-name.md`
+- 目的：用 RPG 世界的類比來教學真實的技術概念
+- 格式：技術定義 → RPG 類比 → 在故事中的對應 → 延伸閱讀
+- 每個 session 引入的新技術概念都應產出對應的 terminology 文件
 
 ## 每日記錄
 - 每天結束時產出 brief 和 log
@@ -50,6 +62,15 @@
 - 故事以 Series 為單位，每個 Series 包含多個 Session
 - Session 檔案位於 `sessions/series{N}/session_XXX.md`
 - 每個 Series 有獨立大綱：`outline-series{N}.md`
+- **Series 1 風格：Dragon Quest 日系 RPG**
+
+## Session 結束規則
+- 導演模式下，Claude 可根據以下條件建議結束 session：
+  - 該 session 的核心技術概念已完整映射為故事元素
+  - 故事到達自然的段落點
+  - 新的物件/世界觀/名詞已生成並記錄
+- 使用者可隨時以明確指令結束 session（如「session 結束」「end session」）
+- 結束時需：儲存接龍記錄、更新 outline、commit & push
 
 ## Reference 使用規則
 - 參考資料位於 `reference/`（不進 repo）
@@ -60,4 +81,5 @@
 ## 檔案慣例
 - sessions: `sessions/series{N}/session_XXX.md`
 - drafts: `chapter_XX.md`
+- terminology: `terminology/term-name.md`
 - 所有檔案使用繁體中文
