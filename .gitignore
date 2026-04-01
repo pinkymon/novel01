@@ -2,3 +2,6 @@ Thumbs.db
 .DS_Store
 desktop.ini
 *.tmp
+
+# 參考資料（本地用，不進 repo）
+reference/
