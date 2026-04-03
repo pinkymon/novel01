@@ -48,10 +48,22 @@
 - 每份素材用 markdown，包含名稱、描述、在故事中的作用
 
 ## Terminology（技術名詞教學）
-- 路徑：`terminology/term-name.md`
-- 目的：用 RPG 世界的類比來教學真實的技術概念
-- 格式：技術定義 → RPG 類比 → 在故事中的對應 → 延伸閱讀
-- 每個 session 引入的新技術概念都應產出對應的 terminology 文件
+
+### 檔案結構
+- **總表**：`terminology/index.md`——所有 session 的名詞一覽，按 session 排列
+- **分篇教學**：`terminology/s{NN}-terms.md`——每個 session 的專屬教學文件
+- 每個名詞標注**詞性**：名詞(N)、動詞(V)、形容詞(Adj)
+- 每個名詞包含**故事類比**欄位
+
+### 格式
+- 總表：名詞 | 詞性 | 技術定義 | 故事類比（按 session 分組）
+- 分篇：核心概念 → 名詞表 → RPG 世界的理解方式 → 延伸閱讀
+
+### 類比原則
+- 類比是**柔性的**，不是剛性 1:1 映射
+- 讓讀者直覺理解即可
+- 避免過度映射（木棍 ≠ Bash，免許 ≠ System Prompt）
+- 尚無好類比的標註「（待定，視故事發展）」
 
 ## 每日記錄
 - 每天結束時產出 brief 和 log
@@ -78,6 +90,22 @@
 - 每個 session 的骨架已標注對應的 reference 文件路徑
 - 讀取 reference → 研究技術概念 → 映射為故事元素 → 生成內容
 
+## Session 開始流程
+
+每個 session 開始時，依照以下順序：
+
+1. **讀取 Reference**：開啟 `reference/series1idea/s{NN}-*.md`
+2. **生成/檢視 Terminology**：
+   - 若 `terminology/s{NN}-terms.md` 不存在 → 根據 reference 生成
+   - 若已存在 → 檢視並確認是否需要更新
+   - 同步更新 `terminology/index.md`
+3. **Director 術語討論**：
+   - 導演模式下討論本 session 核心技術概念
+   - 確認每個名詞的故事類比
+   - 使用者可調整映射方向（使用者主導）
+   - ⚠️ 這是準備性的，不預設故事走向
+4. **進入 Actor 接龍**：術語討論完成後開始故事
+
 ## 風格對齊工作流程
 
 每次 Actor 模式接龍後，依序執行以下步驟：
@@ -98,5 +126,5 @@
 ## 檔案慣例
 - sessions: `sessions/series{N}/session_XXX.md`
 - drafts: `chapter_XX.md`
-- terminology: `terminology/term-name.md`
+- terminology: `terminology/index.md`（總表）+ `terminology/s{NN}-terms.md`（分篇）
 - 所有檔案使用繁體中文
