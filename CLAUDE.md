@@ -1,6 +1,9 @@
 # Novel Project — Claude 工作指引
 
 ## 全域規則（Global）
+- **Series 1 標題**：Claude Quest Builder
+- **核心理念**：Loop is life, construction is meaning
+- **引言**：Story about Peter and Claude, to know each other, to build everything, to save the world.
 - **風格**：Series 1 全程採用 Dragon Quest 日系 RPG 風格
 - 使用者主導故事方向，Claude 是協作者
 - 不要擅自決定劇情走向或搶先開篇
