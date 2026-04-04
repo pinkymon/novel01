@@ -1,4 +1,8 @@
-# Series 1 大綱：The Loop Awakens
+# Series 1 大綱：Claude Quest Builder
+
+**標題**：Claude Quest Builder
+**核心理念**：Loop is life, construction is meaning
+**引言**：Story about Peter and Claude, to know each other, to build everything, to save the world.
 
 **風格**：Dragon Quest 日系 RPG
 **篇幅**：中篇（12 sessions）
@@ -42,6 +46,11 @@
 > **The Loop Never Changes.**
 > 從 s01 到 s12，核心的「觀察→判斷→行動→回饋→重複」循環始終不變。
 > 每個 session 只是在 Loop 之上加一層新的能力——而不是改變 Loop 本身。
+
+> **Loop is life, construction is meaning.**
+> Loop 是活著的證明——進入 Loop 的存在是「活的」。
+> 而建造（construction）是意義的來源——Peter 和 Claude 透過共同建造來認識彼此、理解世界、拯救世界。
+> 每個 session 都是一次建造：建造工具、建造隊伍、建造世界。
 
 ## 各 Session 新增元素（預計）
 
