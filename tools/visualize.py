@@ -13,6 +13,13 @@ NOVEL_DIR = Path(__file__).parent.parent
 SESSIONS_DIR = NOVEL_DIR / "sessions" / "series1"
 
 # Session 主題對照
+STATUS_MAP = {
+    "✅ 已改寫": "DONE",
+    "📝 接龍中": "WIP",
+    "🔲 骨架": "SKELETON",
+    "🔲 未開始": "TODO",
+}
+
 SESSION_TITLES = {
     "001": "What Is an Agent?",
     "002": "Tool Use",
@@ -110,7 +117,7 @@ def gen_worktree_diagram(trees, branches):
     lines = ["```mermaid", "graph TD"]
 
     # 主 worktree
-    lines.append(f'    MASTER["📁 novel/\\n🌿 master"]')
+    lines.append('    MASTER["novel/\\nmaster"]')
 
     for tree in trees:
         if tree.get("branch") == "master":
@@ -118,7 +125,7 @@ def gen_worktree_diagram(trees, branches):
         branch = tree.get("branch", "unknown")
         path = Path(tree["path"]).name
         node_id = branch.replace("-", "_").replace("/", "_")
-        lines.append(f'    {node_id}["📁 {path}/\\n🌿 {branch}"]')
+        lines.append(f'    {node_id}["{path}/\\n{branch}"]')
         lines.append(f'    MASTER -->|worktree| {node_id}')
 
     # 其他分支（非 worktree）
@@ -138,12 +145,14 @@ def gen_worktree_diagram(trees, branches):
 def gen_session_progress(sessions):
     """Graph LR: session 進度條"""
     lines = ["```mermaid", "graph LR"]
-    lines.append('    subgraph "Claude Quest Builder — Series 1"')
+    lines.append("    subgraph CQB[Claude Quest Builder Series 1]")
 
     prev = None
     for s in sessions:
         node_id = f"S{s['num']}"
-        label = f"{s['status']}\\ns{s['num']}\\n{s['title']}"
+        status = STATUS_MAP.get(s["status"], s["status"])
+        title = s["title"].replace('"', "'").replace("&", "and")
+        label = f"s{s['num']} {title}\\n[{status}]"
         lines.append(f'        {node_id}["{label}"]')
         if prev:
             lines.append(f'        {prev} --> {node_id}')
